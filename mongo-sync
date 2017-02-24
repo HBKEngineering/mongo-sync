@@ -147,7 +147,7 @@ function pull {
     success_msg
 
     echo "Overwriting Local DB... "
-    mongorestore -u "$local_access_username" -p "$local_access_password" -d "$local_db" --authenticationDatabase "$local_authenticationDatabase" --port "$local_host_port" "$TMPDIR"/"$remote_db" --drop --restoreDbUsersAndRoles > /dev/null
+    mongorestore -u "$local_access_username" -p "$local_access_password" -d "$local_db" --authenticationDatabase "$local_access_authenticationDatabase" --port "$local_host_port" "$TMPDIR"/"$remote_db" --drop --restoreDbUsersAndRoles > /dev/null
     success_msg
 
     cleanup
